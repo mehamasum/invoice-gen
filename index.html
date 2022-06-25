@@ -1,0 +1,167 @@
+<html>
+
+<head>
+  <meta content="text/html; charset=UTF-8" http-equiv="content-type">
+  <style type="text/css">
+    table td,
+    table th {
+      padding: 0
+    }
+
+    table td {
+      padding: 5px;
+      vertical-align: top;
+      border: 1px solid #bdbdbd;
+    }
+
+    .text {
+      color: #000000;
+      font-weight: 400;
+    }
+
+    .table {
+      font-size: inherit;
+      border-spacing: 0;
+      border-collapse: collapse;
+    }
+
+    .subtext {
+      color: #808080;
+    }
+
+    .bold {
+      font-weight: 700;
+    }
+
+    .body {
+      max-width: 468px;
+      padding: 48px;
+      font-size: 12px;
+      font-family: "Arial";
+    }
+
+    p {
+      margin: 0;
+      color: #000000;
+      line-height: 1.25;
+    }
+
+    .date {
+      float: right;
+    }
+  </style>
+</head>
+
+<body class="body">
+  <p>
+    <span class="bold">{{ contractor }}</span>
+    <span class="text date">{{ date }}</span>
+  </p>
+  <p>
+    <span class="text">{{ contractorAddressLine1 }}</span><br />
+    <span class="text">{{ contractorAddressLine2 }}</span><br />
+    <span class="text">{{ contractorAddressLine3 }}</span><br />
+    <span class="text">{{ contractorIdType }}: {{ contractorId }}</span><br />
+  </p>
+
+  <br /><br />
+
+  <h2><span>Invoice</span></h2>
+  <p>
+    <span class="bold">Invoice number: </span>
+    <span class="text">{{ invoiceNumber }}</span>
+  </p>
+
+  <br /><br />
+
+  <p>
+    <span class="bold">{{ company }}</span><br />
+    <span class="text">{{ companyAddressLine1 }}</span><br />
+    <span class="text">{{ companyAddressLine2 }}</span><br />
+    <span class="text">{{ companyAddressLine3 }}</span><br />
+  </p>
+  <br /><br /><br />
+  <table class="table">
+    <tr >
+      <td colspan="1" rowspan="1">
+        <p><span class="bold">Concept</span></p>
+      </td>
+      <td colspan="1" rowspan="1">
+        <p><span class="bold">Monthly invoiceTotal</span></p>
+      </td>
+      <td colspan="1" rowspan="1">
+        <p><span class="bold">%VAT</span></p>
+      </td>
+      <td colspan="1" rowspan="1">
+        <p><span class="bold">Total</span></p>
+      </td>
+    </tr>
+    <tr >
+      <td colspan="1" rowspan="1">
+        <p><span>{{ invoiceLine }}</span></p>
+      </td>
+      <td colspan="1" rowspan="1">
+        <p><span class="text">{{ invoiceCurrency }} {{ invoiceTotal }}</span></p>
+      </td>
+      <td colspan="1" rowspan="1">
+        <p><span class="text">0</span></p>
+      </td>
+      <td colspan="1" rowspan="1">
+        <p><span class="text">{{ invoiceCurrency }} {{ invoiceTotal }}</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="1" rowspan="1">
+        <p><span class="text">Total Retainer Base</span></p>
+      </td>
+      <td colspan="1" rowspan="1">
+        <p><span class="text"></span></p>
+      </td>
+      <td colspan="1" rowspan="1">
+        <p><span class="text"></span></p>
+      </td>
+      <td colspan="1" rowspan="1">
+        <p><span class="text">{{ invoiceCurrency }} {{ invoiceTotal }}</span></p>
+      </td>
+    </tr>
+    <tr >
+      <td colspan="1" rowspan="1">
+        <p><span class="text">Total VAT</span></p>
+      </td>
+      <td colspan="1" rowspan="1">
+        <p><span class="text"></span></p>
+      </td>
+      <td colspan="1" rowspan="1">
+        <p><span class="text"></span></p>
+      </td>
+      <td colspan="1" rowspan="1">
+        <p><span class="text">{{ invoiceCurrency }} 0.00</span></p>
+      </td>
+    </tr>
+    <tr >
+      <td colspan="1" rowspan="1">
+        <p><span class="bold">Total</span></p>
+      </td>
+      <td colspan="1" rowspan="1">
+        <p><span class="bold"></span></p>
+      </td>
+      <td colspan="1" rowspan="1">
+        <p><span class="bold"></span></p>
+      </td>
+      <td colspan="1" rowspan="1">
+        <p><span class="bold">{{ invoiceCurrency }} {{ invoiceTotal }}</span></p>
+      </td>
+    </tr>
+  </table>
+  <br /><br /><br />
+  <p class="subtext">
+    <span>Amount payable to</span><br />
+    <span class="bold">Account holder: </span><span>{{ accountHolder }}</span><br />
+    <span class="bold">Bank Name: </span><span>{{ bankName }}</span><br />
+    <span class="bold">SWIFT/BIC: </span><span>{{ bankSwift }}</span><br />
+    <span class="bold">IBAN: </span><span>{{ bankIban }}</span><br />
+    <span class="bold">Address: </span><span>{{ bankAddress }}</span><br />
+  </p>
+</body>
+
+</html>
